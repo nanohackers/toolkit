@@ -1,0 +1,17 @@
+version: '3.2'
+services:
+  db:
+    image: postgres:10.2-alpine
+    ports:
+      - 5432:5432
+  web:
+    build: .
+    volumes:
+      - .:/app
+    command: puma -C config/puma.rb
+    environment:
+      - RAILS_ENV=development
+    ports:
+      - 3000:3000
+    depends_on:
+      - db

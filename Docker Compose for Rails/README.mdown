@@ -1,0 +1,18 @@
+# Ruby on Rails Docker Compose Setup Files
+
+## Getting Started
+Before you start, make sure you have docker installed. If you don't, you can
+find instructions to install it [here](https://www.docker.com/community-edition)
+
+Copy `docker-compose.yml` and `Dockerfile` into your working Rails directory.
+
+Now open terminal, navigate to your folder, and type `docker-compose up` to boot
+the server.
+
+Once that's done, you can navigate to http://localhost:3000 to view the
+application.
+
+If you need to access rails console just type `docker-compose exec web
+/bin/bash`. This will put you in bash or the terminal for the server you just
+booted. From here you can type things like `rails db:migrate`, `rake routes`,
+`rails console`.
